@@ -22,7 +22,7 @@ export default {
     return{
       nom: "anarana",
       prenom: "fanampiny",
-      nouveaunom:"name",
+      nouveauNom:"name",
       isLoading:true,
     };
   },
@@ -31,7 +31,7 @@ export default {
     async changeValue(){
       await setTimeout(() => {
         this.nom = "bob";
-        this.nouveaunom="newname",
+        this.nouveauNom="newname",
         this.isLoading = false;
       }, 3000);
     }
@@ -43,7 +43,7 @@ export default {
     },
 
     newFullName(){
-        return this.nouveaunom + " " + this.prenom;
+        return this.nouveauNom + " " + this.prenom;
     }
   },
 
