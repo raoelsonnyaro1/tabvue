@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <oldTab :valeur="fullName"/>
-    <div v-if="isLoading">en train de charger</div>
+    <div v-if="isLoading">loading...</div>
     <newTab v-else :newValeur="newFullName"/>
   </div>
 </template>
