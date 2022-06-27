@@ -1,5 +1,5 @@
 <template>
-    <table>
+    <table class="mx-auto">
         <th colspan="2">oldTab</th>
         <tr>
             <td>nom complet:</td>

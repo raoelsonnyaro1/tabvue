@@ -1,5 +1,5 @@
 <template>
-    <table>
+    <table class="mx-auto">
         <th colspan="2">newTab</th>
         <tr>
             <td>nom complet niova:</td>
@@ -26,4 +26,10 @@ table{
 th, td{
   border: 1px solid black;
   padding: 10px;
-}</style>
+}
+
+.mx-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
