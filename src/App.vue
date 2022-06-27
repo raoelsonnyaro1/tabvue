@@ -1,18 +1,63 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <oldTab :valeur="fullName"/>
+    <div v-if="isLoading">en train de charger</div>
+    <newTab v-else :newValeur="newFullName"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import oldTab from './components/oldTab.vue';
+import newTab from './components/newTab.vue';
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    oldTab,
+    newTab
+  },
+  data(){
+    return{
+      nom: "anarana",
+      prenom: "fanampiny",
+      nouveaunom:"name",
+      isLoading:true,
+    };
+  },
+
+  methods:{
+    async changeValue(){
+      await setTimeout(() => {
+        this.nom = "bob";
+        this.nouveaunom="newname",
+        this.isLoading = false;
+      }, 3000);
+    }
+  },
+
+  computed:{
+    fullName(){
+      return this.nom + " " + this.prenom;
+    },
+
+    newFullName(){
+        return this.nouveaunom + " " + this.prenom;
+    }
+  },
+
+  watch:{
+    nom:{
+      handler(){
+        console.log("watch after change this.nom :>> ", this.nom);
+      }
+    }
+  },
+
+   created() {
+    this.changeValue();
+  },
 }
 </script>
 
